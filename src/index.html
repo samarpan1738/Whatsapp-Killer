@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/sidebar.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+<body>
+    <div id="app">
+        <div class="side-bar">
+            <div class="header">
+                <h1>Chat</h1>
+                <div class="profile-options">
+                    <input type="checkbox" id="profile-options-checkbox">
+                    <!-- <span class="profile-options-btn">∙</span> -->
+                    <ul class="profile-options-list">
+                        <li>
+                            <p>New group</p>
+                        </li>
+                        <li>
+                            <p>New contact</p>
+                        </li>
+                        <li>
+                            <p>Settings</p>
+                        </li>
+                    </ul>
+                    <label for="profile-options-checkbox" class="profile-options-btn">∙</label>
+                </div>
+            </div>
+            <div class="search-bar">
+                <img src="" alt="search-icon" decoding="async">
+                <input type="text" placeholder="Search">
+            </div>
+            <ul class="recent-chats">
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">Last Message!</p>
+                    </div>
+                    <div class="unread">1</div>
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">Last Message!</p>
+                    </div>
+                    <div class="unread">2</div>
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">Last Message!</p>
+                    </div>
+                    <div class="unread">3</div>
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">Last Message!</p>
+                    </div>
+                    <div class="unread">3</div>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="meta">
+                    <h1 class="recipient">Hero</h1>
+                    <h3 class="lastSeen"></h3>
+                </div>
+                <div class="chat-options">
+                    <span>.</span>
+                    <ul>
+                        <li>Delete Chat</li>
+                        <li>About</li>
+                        <li>Profile</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hero-section">
+                <div class="sender-msg-box">
+                    <p class="sender-msg">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="recipient-msg-box">
+                    <img src="" alt="Display Pic">
+                    <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, nobis?</p>
+                </div>    
+            </div>
+            <div class="bottom-bar">
+                <div class="emoji-menu">
+                    <img src="" alt="😀">
+                </div>
+                <div class="msg-box">
+                    <input type="text" class="msg-input">
+                    <button class="send-msg-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
