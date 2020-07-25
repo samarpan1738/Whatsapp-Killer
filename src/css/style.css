@@ -37,13 +37,37 @@ body
 .side-bar
 {
     grid-area: side-bar;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 0.75fr 25fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* padding: 0; */
+    /* background-color: white; */
+    /* overflow: scroll; */
 }
 .main-content
 {
     grid-area: main-content;
-    padding: 1em;
+    display: grid;
+    grid-template-rows: 58px 1fr 58px;
+    grid-template-columns: 1fr;
+    /* padding: 1em; */
+}
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 237, 237);
+    padding: 0.75em;
+    padding-right: 1.7em;
+    height: 58px;
+}
+.dp-icon
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }

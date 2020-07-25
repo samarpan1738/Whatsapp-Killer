@@ -7,13 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/style.css">
     <link rel="stylesheet" href="/src/css/sidebar.css">
+    <link rel="stylesheet" href="/src/css/main-content.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </head>
 <body>
     <div id="app">
         <div class="side-bar">
             <div class="header">
-                <h1>Chat</h1>
+                <!-- <h1>Chat</h1> -->
+                <img src="https://source.unsplash.com/50x50/?face" alt="DP" class="dp-icon">
                 <div class="profile-options">
                     <input type="checkbox" id="profile-options-checkbox">
                     <!-- <span class="profile-options-btn">∙</span> -->
@@ -28,7 +30,7 @@
                             <p>Settings</p>
                         </li>
                     </ul>
-                    <label for="profile-options-checkbox" class="profile-options-btn">∙</label>
+                    <label for="profile-options-checkbox" class="options-btn">∙</label>
                 </div>
             </div>
             <div class="search-bar">
@@ -36,72 +38,151 @@
                 <input type="text" placeholder="Search">
             </div>
             <ul class="recent-chats">
-                <li class="chat-head">
-                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                <li class="chat-head unread">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
                     <div class="recent-meta">
-                        <p class="chat-head-title">Name</p>
-                        <p class="chat-head-msg">Last Message!</p>
+                        <p class="chat-head-title unread">Name</p>
+                        <p class="chat-head-msg unread">New Message!</p>
                     </div>
                     <div class="unread">1</div>
                 </li>
                 <li class="chat-head">
-                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
                     <div class="recent-meta">
                         <p class="chat-head-title">Name</p>
-                        <p class="chat-head-msg">Last Message!</p>
+                        <p class="chat-head-msg">New Message!</p>
                     </div>
-                    <div class="unread">2</div>
+                    <!-- <div class="unread">2</div> -->
                 </li>
                 <li class="chat-head">
-                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
                     <div class="recent-meta">
                         <p class="chat-head-title">Name</p>
-                        <p class="chat-head-msg">Last Message!</p>
+                        <p class="chat-head-msg">New Message!</p>
                     </div>
-                    <div class="unread">3</div>
+                    <!-- <div class="unread">3</div> -->
                 </li>
                 <li class="chat-head">
-                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="recent-dp">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
                     <div class="recent-meta">
                         <p class="chat-head-title">Name</p>
-                        <p class="chat-head-msg">Last Message!</p>
+                        <p class="chat-head-msg">New Message!</p>
                     </div>
-                    <div class="unread">3</div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
+                </li>
+                <li class="chat-head">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div class="recent-meta">
+                        <p class="chat-head-title">Name</p>
+                        <p class="chat-head-msg">New Message!</p>
+                    </div>
+                    <!-- <div class="unread">3</div> -->
                 </li>
             </ul>
         </div>
         <div class="main-content">
-            <div class="top-bar">
+            <div class="header top-bar">
                 <div class="meta">
-                    <h1 class="recipient">Hero</h1>
-                    <h3 class="lastSeen"></h3>
+                    <!-- <h1 class="recipient">Hero</h1> -->
+                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                    <div>
+                        <h3>Recipient</h3>
+                        <p class="last-seen">Last seen a few minutes ago</p>
+                    </div>
                 </div>
                 <div class="chat-options">
-                    <span>.</span>
-                    <ul>
+                    <input type="checkbox" id="chat-options-checkbox">
+                    <!-- <span class="profile-options-btn">.</span> -->
+                    <ul class="chat-options-list">
                         <li>Delete Chat</li>
                         <li>About</li>
                         <li>Profile</li>
                     </ul>
+                    <label for="chat-options-checkbox" class="options-btn">∙</label>
                 </div>
             </div>
             <div class="hero-section">
-                <div class="sender-msg-box">
-                    <p class="sender-msg">Lorem ipsum dolor sit amet consectetur.</p>
+                <div class="sender-msg-box msg-box">
+                    <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
                 </div>
-                <div class="recipient-msg-box">
-                    <img src="" alt="Display Pic">
-                    <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, nobis?</p>
+                <div class="recipient-msg-box msg-box">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
+                    <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
                 </div>    
+                <div class="sender-msg-box msg-box">
+                    <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                </div>
+                <div class="recipient-msg-box msg-box">
+                    <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
+                    <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                </div>
             </div>
             <div class="bottom-bar">
                 <div class="emoji-menu">
                     <img src="" alt="😀">
                 </div>
-                <div class="msg-box">
-                    <input type="text" class="msg-input">
-                    <button class="send-msg-btn">Send</button>
-                </div>
+                <input type="text" class="msg-input" placeholder="Type a message">
+                <!-- <div class="msg-box"> -->
+                <!-- </div> -->
+                <button class="send-msg-btn">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="grey" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span>
+                </button>
             </div>
         </div>
     </div>
