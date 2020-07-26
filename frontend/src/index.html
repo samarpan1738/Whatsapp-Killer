@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Killer App</title>
     <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="stylesheet" href="/src/css/sidebar.css">
-    <link rel="stylesheet" href="/src/css/main-content.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/main-content.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </head>
 <body>
@@ -38,6 +38,7 @@
                 <input type="text" placeholder="Search">
             </div>
             <ul class="recent-chats">
+
                 <li class="chat-head unread">
                     <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
                     <div class="recent-meta">
@@ -135,54 +136,65 @@
                     <!-- <div class="unread">3</div> -->
                 </li>
             </ul>
+            <div class="recent-chats">
+                <p>No recent chats.</p>
+            </div>
         </div>
         <div class="main-content">
-            <div class="header top-bar">
-                <div class="meta">
-                    <!-- <h1 class="recipient">Hero</h1> -->
-                    <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
-                    <div>
-                        <h3>Recipient</h3>
-                        <p class="last-seen">Last seen a few minutes ago</p>
+            <div class="refreshed">
+                <h1><span class="highlight">Add</span> a friend or <span class="highlight">Create</span> a group.</h1>
+            </div>
+            <div class="conversation">
+                <div class="header top-bar">
+                    <div class="meta">
+                        <!-- <h1 class="recipient">Hero</h1> -->
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div>
+                            <h3>Recipient</h3>
+                            <p class="last-seen">Last seen a few minutes ago</p>
+                        </div>
+                    </div>
+                    <div class="chat-options">
+                        <input type="checkbox" id="chat-options-checkbox">
+                        <!-- <span class="profile-options-btn">.</span> -->
+                        <ul class="chat-options-list">
+                            <li>Delete Chat</li>
+                            <li>About</li>
+                            <li>Profile</li>
+                        </ul>
+                        <label for="chat-options-checkbox" class="options-btn">∙</label>
                     </div>
                 </div>
-                <div class="chat-options">
-                    <input type="checkbox" id="chat-options-checkbox">
-                    <!-- <span class="profile-options-btn">.</span> -->
-                    <ul class="chat-options-list">
-                        <li>Delete Chat</li>
-                        <li>About</li>
-                        <li>Profile</li>
-                    </ul>
-                    <label for="chat-options-checkbox" class="options-btn">∙</label>
+                <div class="hero-section">
+                    <div class="sender-msg-box msg-box">
+                        <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                    </div>
+                    <div class="recipient-msg-box msg-box">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
+                        <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                    </div>    
+                    <div class="sender-msg-box msg-box">
+                        <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                    </div>
+                    <div class="recipient-msg-box msg-box">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
+                        <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                    </div>
+                    <div class="sender-msg-box msg-box">
+                        <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-section">
-                <div class="sender-msg-box msg-box">
-                    <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                <div class="bottom-bar">
+                    <div class="emoji-menu">
+                        <img src="" alt="😀">
+                    </div>
+                    <input type="text" class="msg-input" placeholder="Type a message">
+                    <!-- <div class="msg-box"> -->
+                    <!-- </div> -->
+                    <button class="send-msg-btn">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="grey" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span>
+                    </button>
                 </div>
-                <div class="recipient-msg-box msg-box">
-                    <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
-                    <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
-                </div>    
-                <div class="sender-msg-box msg-box">
-                    <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
-                </div>
-                <div class="recipient-msg-box msg-box">
-                    <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
-                    <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
-                </div>
-            </div>
-            <div class="bottom-bar">
-                <div class="emoji-menu">
-                    <img src="" alt="😀">
-                </div>
-                <input type="text" class="msg-input" placeholder="Type a message">
-                <!-- <div class="msg-box"> -->
-                <!-- </div> -->
-                <button class="send-msg-btn">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="grey" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span>
-                </button>
             </div>
         </div>
     </div>
