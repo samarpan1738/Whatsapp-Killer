@@ -105,6 +105,7 @@
 .chat-head
 {
     display: grid;
+    /* display: none; */
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 10fr 2fr;
     grid-template-areas: "dp meta unread";
@@ -112,6 +113,18 @@
     /* align-items: center; */
     padding: 0.75em;
     border-bottom: 1px solid #f5eeee;
+    /* position: relative; */
+}
+.recent-chat-placeholder
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: rgb(197, 189, 189);
 }
 .chat-head.unread
 {
@@ -119,19 +132,9 @@
 }
 ul.recent-chats
 {
-    display: none;
-}
-div.recent-chats
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
     /* display: none; */
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: rgb(197, 189, 189);
 }
+
 .recent-chats
 {
     /* padding: 0.75em; */
@@ -141,6 +144,18 @@ div.recent-chats
 {
     grid:meta;
     padding-left: 1em;
+}
+.wrapper
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.recent-meta>p
+{
+    width: fit-content;
 }
 div.unread
 {

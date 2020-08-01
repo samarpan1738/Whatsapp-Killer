@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/main-content.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <!-- <script src="js/socket.io.js"></script> -->
+    <script src="js/eventHandlers.js" defer></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </head>
 <body>
@@ -38,8 +42,12 @@
                 <input type="text" placeholder="Search">
             </div>
             <ul class="recent-chats">
-
+                <li class="recent-chat-placeholder">
+                    <p>No recent chats.</p>
+                    <!-- <div class="unread">1</div> -->
+                </li>
                 <li class="chat-head unread">
+                    <!-- <div class="wrapper"></div> -->
                     <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
                     <div class="recent-meta">
                         <p class="chat-head-title unread">Name</p>
@@ -136,9 +144,9 @@
                     <!-- <div class="unread">3</div> -->
                 </li>
             </ul>
-            <div class="recent-chats">
+            <!-- <div class="recent-chats">
                 <p>No recent chats.</p>
-            </div>
+            </div> -->
         </div>
         <div class="main-content">
             <div class="refreshed">
@@ -158,7 +166,7 @@
                         <input type="checkbox" id="chat-options-checkbox">
                         <!-- <span class="profile-options-btn">.</span> -->
                         <ul class="chat-options-list">
-                            <li>Delete Chat</li>
+                            <li id="delete-convo">Delete Conversation</li>
                             <li>About</li>
                             <li>Profile</li>
                         </ul>
@@ -186,7 +194,8 @@
                 </div>
                 <div class="bottom-bar">
                     <div class="emoji-menu">
-                        <img src="" alt="😀">
+                        <!-- <img src="" alt="😀"> -->
+                        <p>😀</p>
                     </div>
                     <input type="text" class="msg-input" placeholder="Type a message">
                     <!-- <div class="msg-box"> -->
