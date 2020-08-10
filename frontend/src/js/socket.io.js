@@ -9,6 +9,7 @@ socket.on('connect', function(){
 //     console.log(data.message);
 //     socket.emit('hello',{message:"Recieved your greetings!!"})
 // });
+socket
 socket.emit('createGroup', {name:'game',author:'Goggins'});
 
 socket.on('newMemberJoined', function({participant}){

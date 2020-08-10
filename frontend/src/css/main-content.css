@@ -72,6 +72,23 @@
     /* background-color: ; */
     /* width: 200px; */
 }
+.msg-content
+{
+    animation: inflate 100ms ease-in-out;
+    transform-origin: top center;
+}
+@keyframes inflate
+{
+    0%{
+        opacity: 0;
+        transform:scale(0,0);
+        /* background-color: red; */
+    }
+    100%{
+        opacity: 1;
+        transform:scale(1,1);
+    }
+}
 .msg-box>p
 {
     padding: 0.75em 1em;
@@ -147,12 +164,17 @@
     /* background-color: white; */
     /* border-radius: 10px; */
     padding: 0.5em 0.75em;
+    cursor: pointer;
 }
 .meta
 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#meta-info>h3
+{
+    padding: 0.1em;
 }
 .meta>img
 {

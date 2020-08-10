@@ -12,6 +12,15 @@ io.on('connect',onConnect)
 function onConnect(socket)
 {
     console.log("Socket --> ",socket.id);
+    let isPresent=mapper.find(user=>user.id==socket.id);
+    if(isPresent!=-1)
+    {
+        let user={
+            id:socket.id,
+            name:name
+        };
+        mapper.push(user);
+    }
     console.log(socket.rooms);
     console.log('connected');
     socket.emit('hello',{message:"Hello from socket.io backend"})
@@ -24,7 +33,7 @@ function onConnect(socket)
         socket.join(name,() => {
             let rooms = Object.keys(socket.rooms);
             mapper.push()
-            console.log(rooms); // [ <socket.id>, 'room 237' ]
+            console.log(rooms); // [ <socket.id>, 'room name' ]
           })
         rooms.push({name,author})
     })
@@ -40,3 +49,4 @@ server.listen(3000,()=>{
 app.listen(PORT,()=>{
     console.log(`App Server started at http://localhost:${PORT}`);
 })
+console.log(process.end);

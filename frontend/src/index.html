@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
     <!-- <script src="js/socket.io.js"></script> -->
     <script src="js/eventHandlers.js" defer></script>
+    <!-- <script src="../../backend/index.js" defer></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <div class="profile-options">
                     <input type="checkbox" id="profile-options-checkbox">
                     <!-- <span class="profile-options-btn">∙</span> -->
-                    <ul class="profile-options-list">
+                    <ul class="options-list">
                         <li>
                             <p>New group</p>
                         </li>
@@ -54,6 +55,13 @@
                         <p class="chat-head-msg unread">New Message!</p>
                     </div>
                     <div class="unread">1</div>
+                    <div class="chat-head-options">
+                        <ul class="options-list">
+                            <li>Archive Chat</li>
+                            <li>Delete Chat</li>
+                            <li>Mark as read</li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="chat-head">
                     <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
@@ -157,7 +165,7 @@
                     <div class="meta">
                         <!-- <h1 class="recipient">Hero</h1> -->
                         <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
-                        <div>
+                        <div id="meta-info">
                             <h3>Recipient</h3>
                             <p class="last-seen">Last seen a few minutes ago</p>
                         </div>
@@ -165,7 +173,7 @@
                     <div class="chat-options">
                         <input type="checkbox" id="chat-options-checkbox">
                         <!-- <span class="profile-options-btn">.</span> -->
-                        <ul class="chat-options-list">
+                        <ul class="options-list">
                             <li id="delete-convo">Delete Conversation</li>
                             <li>About</li>
                             <li>Profile</li>
@@ -175,21 +183,21 @@
                 </div>
                 <div class="hero-section">
                     <div class="sender-msg-box msg-box">
-                        <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                        <p class="sender-msg msg-content">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
                     </div>
                     <div class="recipient-msg-box msg-box">
                         <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
-                        <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                        <p class="recipient-msg msg-content">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
                     </div>    
                     <div class="sender-msg-box msg-box">
-                        <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                        <p class="sender-msg msg-content">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
                     </div>
                     <div class="recipient-msg-box msg-box">
                         <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
-                        <p class="recipient-msg">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                        <p class="recipient-msg msg-content">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
                     </div>
                     <div class="sender-msg-box msg-box">
-                        <p class="sender-msg">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                        <p class="sender-msg msg-content">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
                     </div>
                 </div>
                 <div class="bottom-bar">

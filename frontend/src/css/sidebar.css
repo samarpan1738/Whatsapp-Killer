@@ -13,8 +13,9 @@
 .profile-options,.chat-options
 {
     position: relative;
+    z-index: 100;
 }
-.profile-options-list,.chat-options-list
+.options-list
 {
     list-style-type: none;
     /* display: none; */
@@ -25,17 +26,37 @@
     padding: 0.5em 0;
     transform: scale(0);
     opacity: 0;
-    transform-origin: right;
-    transition: transform 100ms ease-in-out,opacity 50ms ease-in-out;
+    transform-origin: top right;
+    transition: transform 100ms ease-in-out,opacity 50ms ease-in-out ;
     box-shadow: 0 0 2px rgb(196, 194, 194);
     width: 1500%;
 }
-.profile-options-list>li,.chat-options-list>li
+.chat-head-options>ul
 {
-    padding: 0.75em;    
+    opacity: 1;
+    position: static;
+    width: 100%;
+    /* transform: scale(1); */
+    transform: none;
+    /* z-index: 100; */
+    /* width: ; */
+}
+.chat-head-options
+{
+    display: none;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+.options-list>li
+{
+    padding: 0.75em 1em; 
+    /* text-align: center;    */
+    /* margin: 0 1em; */
     /* margin-bottom: 1em; */
 }
-.profile-options-list>li:hover,.chat-options-list>li:hover
+.options-list>li:hover
 {
     background-color: var(--hover-color);
 }
@@ -49,6 +70,7 @@
     position: relative;
     font-size: 2rem;
     color: #979494;
+    cursor: pointer;
 }
 .options-btn::after,.options-btn::before
 {
@@ -107,13 +129,15 @@
     display: grid;
     /* display: none; */
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 10fr 2fr;
+    grid-template-columns: 1fr 8fr 1fr;
     grid-template-areas: "dp meta unread";
     /* justify-content: space-evenly; */
     /* align-items: center; */
     padding: 0.75em;
     border-bottom: 1px solid #f5eeee;
     /* position: relative; */
+    cursor: pointer;
+    position: relative;
 }
 .recent-chat-placeholder
 {
