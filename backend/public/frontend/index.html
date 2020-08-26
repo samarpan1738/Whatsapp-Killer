@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/main-content.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/socket-code.js" defer></script>
+    <!-- <script src="../../backend/index.js" defer></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+<body>
+    <div id="app">
+        <div class="side-bar">
+            <div class="header">
+                <!-- <h1>Chat</h1> -->
+                <img src="https://source.unsplash.com/50x50/?face" alt="DP" class="dp-icon">
+                <div class="profile-options">
+                    <input type="checkbox" id="profile-options-checkbox">
+                    <!-- <span class="profile-options-btn">∙</span> -->
+                    <ul class="options-list">
+                        <li id="toggleAddGroup">
+                            <p>New group</p>
+                        </li>
+                        <li id="toggleAddContact">
+                            <p>New contact</p>
+                        </li>
+                        <li id="toggleSettings">
+                            <p>Settings</p>
+                        </li>
+                    </ul>
+                    <label for="profile-options-checkbox" class="options-btn">∙</label>
+                </div>
+            </div>
+            <div class="search-bar">
+                <img src="" alt="search-icon" decoding="async">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="stage">
+                <ul class="recent-chats">
+                    <!-- <li class="recent-chat-placeholder">
+                        <p>No recent chats.</p>
+                        <div class="unread">1</div>
+                    </li> -->
+                    <li class="chat-head unread">
+                        <!-- <div class="wrapper"></div> -->
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title unread">Name</p>
+                            <p class="chat-head-msg unread">New Message!</p>
+                        </div>
+                        <div class="unread">1</div>
+                        <div class="chat-head-options">
+                            <ul class="options-list">
+                                <li>Archive Chat</li>
+                                <li>Delete Chat</li>
+                                <li>Mark as read</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">2</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                    <li class="chat-head">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div class="recent-meta">
+                            <p class="chat-head-title">Name</p>
+                            <p class="chat-head-msg">New Message!</p>
+                        </div>
+                        <!-- <div class="unread">3</div> -->
+                    </li>
+                </ul>
+
+                <section class="addGroupSection">
+                    <header class="createGroupHeader">
+                        <button class="back">
+                            <span data-testid="back" data-icon="back" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="grey" d="M12 4l1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z"></path>
+                                </svg>
+                            </span>
+                        </button>
+                        <h3>Create a Group</h3>
+                    </header>
+                    <input type="text" name="groupName" id="groupNameInput">
+                    <button id="createNewGroup" disabled>Create Group</button>
+                </section>
+                
+                <section class="addContactSection">
+                    <header class="addContactHeader">
+                        <button class="back">
+                            <span data-testid="back" data-icon="back" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="grey" d="M12 4l1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z"></path>
+                                </svg>
+                            </span>
+                        </button>
+                        <h3>Add a contact</h1>
+                    </header>
+                    <input type="text" name="contactName" id="contactNameInput">
+                    <button id="addNewContact" disabled>Add Contact</button>
+                </section>
+                
+            </div>
+        </div>
+            <!-- <div class="recent-chats">
+                <p>No recent chats.</p>
+            </div> -->
+        
+        <div class="main-content">
+            <div class="refreshed">
+                <header class="placeholder">
+                    <h1 class="loggedIn"><span class="highlight add">Add</span> a friend or <span class="highlight create">Create</span> a group.</h1>
+                    <h1 class="loggedOut"><span class="highlight toggleAuth">Login</span> or <span class="highlight toggleAuth">Signup</span></h1>
+                </header>
+                <section class="auth">
+                    <header>
+                        <button class="back">
+                            <span data-testid="back" data-icon="back" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="grey" d="M12 4l1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z"></path>
+                                </svg>
+                            </span>
+                        </button>
+                        <h1 class="authHeading"></h1>
+                    </header>
+                    <form action="">
+                        <input type="text" name="Username" id="username" placeholder="Username">
+                        <input type="password" name="Password" id="password" placeholder="Password">
+                        <button class="authBtn">Login</button>
+                    </form>
+                </section>
+            </div>
+            <div class="conversation">
+                <div class="header top-bar">
+                    <div class="meta">
+                        <!-- <h1 class="recipient">Hero</h1> -->
+                        <img src="https://source.unsplash.com/50x50/?face" alt="" class="dp-icon">
+                        <div id="meta-info">
+                            <h3>Recipient</h3>
+                            <p class="last-seen">Last seen a few minutes ago</p>
+                        </div>
+                    </div>
+                    <div class="chat-options">
+                        <input type="checkbox" id="chat-options-checkbox">
+                        <!-- <span class="profile-options-btn">.</span> -->
+                        <ul class="options-list">
+                            <li id="delete-convo">Delete Conversation</li>
+                            <li>About</li>
+                            <li>Profile</li>
+                        </ul>
+                        <label for="chat-options-checkbox" class="options-btn">∙</label>
+                    </div>
+                </div>
+                <div class="hero-section">
+                    <!-- <h1 class="heading">Added via Search</h1> -->
+                    <!-- <div class="heading"> -->
+                    <!-- </div> -->
+                    <!-- <div class="sender-msg-box msg-box">
+                        <p class="sender-msg msg-content">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                    </div>
+                    <div class="recipient-msg-box msg-box">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
+                        <p class="recipient-msg msg-content">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                    </div>    
+                    <div class="sender-msg-box msg-box">
+                        <p class="sender-msg msg-content">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                    </div>
+                    <div class="recipient-msg-box msg-box">
+                        <img src="https://source.unsplash.com/50x50/?face" alt="Display Pic" class="dp-icon">
+                        <p class="recipient-msg msg-content">Lorem ipsum dolor, sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, laborum. elit. Quidem, nobis?</p>
+                    </div>
+                    <div class="sender-msg-box msg-box">
+                        <p class="sender-msg msg-content">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, qui.</p>
+                    </div> -->
+                </div>
+                <div class="bottom-bar">
+                    <div class="emoji-menu">
+                        <!-- <img src="" alt="😀"> -->
+                        <p>😀</p>
+                    </div>
+                    <input type="text" class="msg-input" placeholder="Type a message">
+                    <!-- <div class="msg-box"> -->
+                    <!-- </div> -->
+                    <button class="send-msg-btn">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="grey" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
