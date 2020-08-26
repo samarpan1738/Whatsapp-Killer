@@ -161,13 +161,16 @@ function onConnect(socket)
     })
     
     socket.on('createGroup',({name,author})=>{
+        
         console.log(`CREATE_GROUP ${name} ${author}`);
+        
+        // Join a room
         socket.join(name,() => {
             let rooms = Object.keys(socket.rooms);
-            // mapper.push()
             console.log(socket.rooms); // [ <socket.id>, 'room name' ]
           })
-        rooms.push({name,author})
+        
+          rooms.push({name,author})
     })
     
     socket.on('joinGroup',({groupName,participant})=>{

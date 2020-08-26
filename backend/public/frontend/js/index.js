@@ -121,7 +121,8 @@ function createContactElement(contact)
 
 function loadContacts(contacts)
 {
-    
+    // if($('.recent-chats').children()[0].className=="recent-chat-placeholder")
+    //     $('.recent-chats').empty();
     console.log(contacts);
     $('.recent-chats').empty()
 
@@ -223,32 +224,28 @@ $('#toggleAddGroup').click((e)=>{
     //0) Close options-menu 
     if(document.getElementById('profile-options-checkbox').checked)
         document.getElementById('profile-options-checkbox').checked=false;
-    // $('.recent-chats').hide();
-    // $('.stage').remove();
-    // $('.side-bar').append($('<div>').attr('class','stage'));
-    
-    //2) Append addGroup section / Show menu to add group
-    // $('.stage').append($('<div>')
-    // .attr('class','addGroupSection')
-    // .append($('<input>')
-    // .attr('type','text')
-    // .attr('name','groupName')
-    // .attr('placeholder','Enter group name')
-    // .attr('id','groupNameInput'))
-    // .append($('<button>')
-    // .attr('id','createNewGroup')
-    // .attr('disabled','true')
-    // .text('Create Group'))
-    // );
+
 })
 
-$('#createNewGroup').click(()=>{
+$('#createNewGroup').click((e)=>{
+
+    console.log("CreateGroup button clicked");
+    
     let groupName=$('#groupNameInput').val();
     if(groupName.trim().length!=0)
     {
-        // $('#groupNameInput').css('border-color','red');
-        // $('#groupNameInput').css('border-color','black');
-        socket.emit('createGroup', {name:groupName,author:currentUser.uname});
+       createGroup(groupName);    
+        // Save to contacts   
+       contacts.push({
+            dpUrl:"https://source.unsplash.com/50x50/?face",
+            name:groupName,
+            lastMessage:'Last Message!'   
+       })
+       loadSingleContact({
+        dpUrl:"https://source.unsplash.com/50x50/?face",
+        name:groupName,
+        lastMessage:'Last Message!'   
+   })
     }
 })
 
@@ -343,64 +340,59 @@ $('#toggleAddContact').click((e)=>{
         document.getElementById('profile-options-checkbox').checked=false;
     // console.log($('#profile-options-checkbox'));
 })
-function addContact()
-{
-    fetch(`http://localhost:2000/user/${currentUser.uname}/contacts`,
-        {
-            method: "post",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify({
-                contactName
-            })
-        }).then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            console.log(data.constructor==Array);
-            if(res && res.constructor==Array)
-            {
-                // console.log(loadContacts);
-                // let c=[];
-                contacts=[]
-                data.forEach(name=>{
-                    contacts.push({
-                        dpUrl:"https://source.unsplash.com/50x50/?face",
-                        name:name,
-                        lastMessage:'Last Message!'
-                    })
-                })
-                // console.log(contacts);
-                // contacts=res;
-                loadContacts(contacts);
-            }
-            // getContacts();
-        })
-}
+// function addContact()
+// {
+//     fetch(`http://localhost:2000/user/${currentUser.uname}/contacts`,
+//         {
+//             method: "post",
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json'
+//             },
+//             body:JSON.stringify({
+//                 contactName
+//             })
+//         }).then(res=>res.json())
+//         .then(data=>{
+//             console.log(data);
+//             console.log(data.constructor==Array);
+//             if(res && res.constructor==Array)
+//             {
+//                 // console.log(loadContacts);
+//                 // let c=[];
+//                 contacts=[]
+//                 data.forEach(name=>{
+//                     contacts.push({
+//                         dpUrl:"https://source.unsplash.com/50x50/?face",
+//                         name:name,
+//                         lastMessage:'Last Message!'
+//                     })
+//                 })
+//                 // console.log(contacts);
+//                 // contacts=res;
+//                 loadContacts(contacts);
+//             }
+//             // getContacts();
+//         })
+// }
 
 $('#addNewContact').click(e=>{
     let contactName=$('#contactNameInput').val().trim();
-    
+
+    // checking if i/p is empty OR if contacts already exists
     if(contactName.length!=0 && !conversations[contactName])
     {
         // Send socket request
         socket.emit('addContact', {target:contactName});
-        
-        let div=createContactElement({
+        let contact={
             dpUrl:"https://source.unsplash.com/50x50/?face",
             name:contactName,
             lastMessage:'Request Sent'
-        })
-        
-        if(div!=null)
-        {
-            if($('.recent-chats').children()[0].className=="recent-chat-placeholder")
-                $('.recent-chats').empty();
-
-            $('.recent-chats').append(div);
         }
-        // conversations[contactName]=[];
+        // Add to contacts array
+        contacts.push(contact);
+        // load contact
+        loadSingleContact(contact);
     }
     
 })
@@ -421,6 +413,19 @@ $('.stage .back').each((idx,element)=>{
         stageSection('stage','recent-chats');
     })
 })
+
+function loadSingleContact(data)
+{
+    let div=createContactElement(data)
+    
+    if(div!=null)
+    {
+        if($('.recent-chats').children()[0].className=="recent-chat-placeholder")
+            $('.recent-chats').empty();
+
+        $('.recent-chats').append(div);
+    }
+}
 
 function getContacts()
 {
@@ -448,3 +453,10 @@ $('.create').click(()=>{
 $('.auth>form>input').on('change',(e)=>{
     console.log(e.target);
 })
+
+function createGroup(name)
+{
+    console.log(name);
+    socket.emit('createGroup', {name:groupName,author:currentUser.uname});
+}
+
