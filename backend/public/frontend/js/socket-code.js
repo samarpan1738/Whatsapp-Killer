@@ -19,10 +19,7 @@ socket.on('newMemberJoined', function({participant}){
     console.log(participant);
 });
 
-// socket.on('disconnected', function(){
-//     socket.emit('deserialized',{user:currentUser.uname});
-//     // console.log("Disconnected from server");
-// });
+
 
 socket.on('request',({from})=>{
     console.log("Request from "+from);
