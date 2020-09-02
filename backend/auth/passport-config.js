@@ -1,8 +1,9 @@
+require("dotenv").config();
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const { User } = require("../models/User");
-
+let { CLIENT_ID, CLIENT_SECRET } = process.env;
 passport.use(
 	new LocalStrategy(function (username, password, done) {
 		console.log("Inside Local Stat");
@@ -40,8 +41,8 @@ passport.deserializeUser(function (id, done) {
 // passport.use(
 // 	new FacebookStrategy(
 // 		{
-// 			clientID: "315597713025788",
-// 			clientSecret: "59d7949a1f25bb4a358e594add9bb9b7",
+// 			clientID: CLIENT_ID,
+// 			clientSecret: CLIENT_SECRET,
 // 			callbackURL: "http://localhost:2000/login/facebook/callback",
 // 		},
 // 		function (accessToken, refreshToken, profile, cb) {

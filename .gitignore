@@ -1,3 +1,4 @@
 /backend/node_modules
 plan_of_action.md
 /backend/secret
+/backend/.env
